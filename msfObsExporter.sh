@@ -29,7 +29,7 @@ UNION ALL(
 	INNER JOIN concept_name ca ON ca.concept_id = o.value_coded
 	ORDER BY e.encounter_datetime, o.obs_datetime
 	LIMIT $STARTFROM, $RANGE
-	INTO OUTFILE '$OUTPUTDIR/obs_$NOW.csv' FIELDS TERMINATED BY ',' ENCLOSED BY '"' LINES TERMINATED BY '\n'
+	INTO OUTFILE '$OUTPUTDIR/obs_$NOW_$STARTFROM.csv' FIELDS TERMINATED BY ',' ENCLOSED BY '"' LINES TERMINATED BY '\n'
 );
 EOFMYSQL
 echo "............................................"
